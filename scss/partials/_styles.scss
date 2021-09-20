@@ -1,0 +1,215 @@
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+.page {
+    background: url(../images/bg-pattern-desktop.svg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+.landing-content {
+    padding: 1rem;
+
+    .logo {
+        margin: 5rem 0;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-family: "JosefinSans SemiBold";
+        font-size: 4.5rem;
+        white-space: pre-wrap;
+        letter-spacing: 15px;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+
+        span {
+            font-family: "JosefinSans Light";
+            display: block;
+            color: $PastelPink;
+        }
+    }
+
+    p {
+        font-family: "JosefinSans Regular";
+        font-size: 1.1rem;
+        color: $PastelPink;
+        margin-bottom: 2rem;
+    }
+
+    .input-group {
+        margin-bottom: 0.5rem;
+
+        input {
+            font-family: "JoseFinSans Light";
+            font-size: 1.2rem;
+            border: 1px solid $Pink;
+            border-radius: 2rem !important;
+            color: $Pink;
+            padding: 1.4rem 1.2rem 0.55rem;
+
+            &:focus {
+                z-index: 1;
+                box-shadow: 0 0 10px $PastelPink;
+                color: $Pink;
+
+                + label {
+                    font-size: 1rem;
+                    transform: translate(21px, 5px);
+                }
+            }
+
+            &:hover {
+                &::placeholder {
+                    color: $Pink;
+                }
+
+                &::-webkit-input-placeholder {
+                    color: $Pink;
+                }
+
+                &:-ms-input-placeholder {
+                    color: $Pink;
+                }
+
+                &:-moz-placeholder {
+                    color: $Pink;
+                }
+            }
+        }
+
+        label {
+            position: absolute;
+            transform: translate(21px, 18px);
+            font-size: 1.2rem;
+            font-family: "JoseFinSans Light";
+            color: $PastelPink;
+            z-index: 1;
+            transition: all ease-in-out 0.2s;
+
+            &.active {
+                font-size: 1rem;
+                transform: translate(21px, 5px);
+            }
+        }
+
+        .input-group-append {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            width: 20%;
+            transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+
+            &.active {
+                width: 100%;
+
+                .btn {
+                    &::after {
+                        content: "";
+                        display: block;
+                        height: 20px;
+                        width: 20px;
+                        background-size: 20px 20px;
+                        background-image: url(../images/check-solid.svg);
+                        background-repeat: no-repeat;
+                        margin-left: 5px;
+                        top: -2px;
+                        position: relative;
+                        animation-name: slide;
+                        animation-duration: .5s;
+                    }
+                }
+            }
+
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, $PastelPink 0%, $Pink 100%);
+                border-radius: 2rem;
+                padding: 1.25rem 2rem;
+                line-height: 1;
+                width: 100%;
+                box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 35%);
+                -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+                -webkit-box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 35%);
+                transition: all 0.2s ease-in-out;
+                text-align: center;
+                font-size: 1.2rem;
+                font-family: "JoseFinSans SemiBold";
+                color: white;
+
+                span {
+                    opacity: 0;
+                    transition: all ease-in-out 0.5s;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 25px;
+                    width: 25px;
+                    background-size: 25px 25px;
+                    background-image: url(../images/chevron-right-solid.svg);
+                    background-repeat: no-repeat;
+                    transition: all ease-in-out 0.3s;
+                }
+
+                &.active {
+                    box-shadow: 0px 0px 15px 0px $Pink;
+                    -moz-box-shadow: 0px 0px 15px 0px $Pink;
+                    -webkit-box-shadow: 0px 0px 15px 0px $Pink;
+
+                    span {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .form-error {
+        opacity: 0;
+        padding-left: 25px;
+        font-size: 1rem;
+        font-family: "JoseFinSans Regular";
+        color: red;
+        transition: all ease-in-out .3s;
+        position: relative;
+        top: -30px;
+
+        &.active {
+            opacity: 1;
+            top: 0;
+        }
+    }
+}
+
+.hero {
+    background: url(../images/hero-desktop.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}

@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "JosefinSans Light";
+  src: url("../fonts/JosefinSans-Light.ttf");
+}
+@font-face {
+  font-family: "JosefinSans Regular";
+  src: url("../fonts/JosefinSans-Regular.ttf");
+}
+@font-face {
+  font-family: "JosefinSans SemiBold";
+  src: url("../fonts/JosefinSans-SemiBold.ttf");
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+.page {
+  background: url(../images/bg-pattern-desktop.svg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.landing-content {
+  padding: 1rem;
+}
+.landing-content .logo {
+  margin: 5rem 0;
+}
+.landing-content h1 {
+  text-transform: uppercase;
+  font-family: "JosefinSans SemiBold";
+  font-size: 4.5rem;
+  white-space: pre-wrap;
+  letter-spacing: 15px;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.landing-content h1 span {
+  font-family: "JosefinSans Light";
+  display: block;
+  color: #ce9797;
+}
+.landing-content p {
+  font-family: "JosefinSans Regular";
+  font-size: 1.1rem;
+  color: #ce9797;
+  margin-bottom: 2rem;
+}
+.landing-content .input-group {
+  margin-bottom: 0.5rem;
+}
+.landing-content .input-group input {
+  font-family: "JoseFinSans Light";
+  font-size: 1.2rem;
+  border: 1px solid #f96262;
+  border-radius: 2rem !important;
+  color: #f96262;
+  padding: 1.4rem 1.2rem 0.55rem;
+}
+.landing-content .input-group input:focus {
+  z-index: 1;
+  box-shadow: 0 0 10px #ce9797;
+  color: #f96262;
+}
+.landing-content .input-group input:focus + label {
+  font-size: 1rem;
+  transform: translate(21px, 5px);
+}
+.landing-content .input-group input:hover::placeholder {
+  color: #f96262;
+}
+.landing-content .input-group input:hover::-webkit-input-placeholder {
+  color: #f96262;
+}
+.landing-content .input-group input:hover:-ms-input-placeholder {
+  color: #f96262;
+}
+.landing-content .input-group input:hover:-moz-placeholder {
+  color: #f96262;
+}
+.landing-content .input-group label {
+  position: absolute;
+  transform: translate(21px, 18px);
+  font-size: 1.2rem;
+  font-family: "JoseFinSans Light";
+  color: #ce9797;
+  z-index: 1;
+  transition: all ease-in-out 0.2s;
+}
+.landing-content .input-group label.active {
+  font-size: 1rem;
+  transform: translate(21px, 5px);
+}
+.landing-content .input-group .input-group-append {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 20%;
+  transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+}
+.landing-content .input-group .input-group-append.active {
+  width: 100%;
+}
+.landing-content .input-group .input-group-append.active .btn::after {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-size: 20px 20px;
+  background-image: url(../images/check-solid.svg);
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  top: -2px;
+  position: relative;
+  animation-name: slide;
+  animation-duration: 0.5s;
+}
+.landing-content .input-group .input-group-append .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ce9797 0%, #f96262 100%);
+  border-radius: 2rem;
+  padding: 1.25rem 2rem;
+  line-height: 1;
+  width: 100%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: "JoseFinSans SemiBold";
+  color: white;
+}
+.landing-content .input-group .input-group-append .btn span {
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+.landing-content .input-group .input-group-append .btn::after {
+  content: "";
+  display: block;
+  height: 25px;
+  width: 25px;
+  background-size: 25px 25px;
+  background-image: url(../images/chevron-right-solid.svg);
+  background-repeat: no-repeat;
+  transition: all ease-in-out 0.3s;
+}
+.landing-content .input-group .input-group-append .btn.active {
+  box-shadow: 0px 0px 15px 0px #f96262;
+  -moz-box-shadow: 0px 0px 15px 0px #f96262;
+  -webkit-box-shadow: 0px 0px 15px 0px #f96262;
+}
+.landing-content .input-group .input-group-append .btn.active span {
+  opacity: 1;
+}
+.landing-content .form-error {
+  opacity: 0;
+  padding-left: 25px;
+  font-size: 1rem;
+  font-family: "JoseFinSans Regular";
+  color: red;
+  transition: all ease-in-out 0.3s;
+  position: relative;
+  top: -30px;
+}
+.landing-content .form-error.active {
+  opacity: 1;
+  top: 0;
+}
+
+.hero {
+  background: url(../images/hero-desktop.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/*# sourceMappingURL=main.css.map */
